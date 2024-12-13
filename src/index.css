@@ -29,7 +29,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: start;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -60,4 +60,8 @@ button:active {
 button:focus,
 button:focus-visible {
   outline: none;
+}
+
+li {
+  cursor: pointer;
 }
