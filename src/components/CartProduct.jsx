@@ -1,4 +1,5 @@
 import { CircleX } from "lucide-react";
+import deleteIcon from "../assets/delete.svg";
 import { formatINR } from "../utils/currency";
 import QtySelector from "./QtySelector";
 
@@ -20,22 +21,26 @@ export default function CartProduct() {
   return (
     <div className="flex items-center justify-center gap-4">
       <img
-        src={product.img}
+        src={product.image}
         alt="Product Image"
-        width={200}
+        width={150}
+        height={100}
         className="border"
       />
-      <div className="px-4">
-        <h3 className="line-clamp-2 py-2">{product.title}</h3>
+
+      <div className="flex h-full flex-col justify-between px-4">
+        <h3 className="line-clamp-3 py-1">{product.title}</h3>
+
         <h3 className="">{formatINR(product.price)}</h3>
+
         <div className="flex items-center justify-center gap-3">
           <QtySelector initialQty={3} />
           <div className="cursor-pointer">
-            <CircleX />
+            <img src={deleteIcon} alt="Delete" />
           </div>
         </div>
       </div>
-      <h2 className="px-4">{formatINR(total)}</h2>
+      <h2 className="px-2">{formatINR(total)}</h2>
     </div>
   );
 }
