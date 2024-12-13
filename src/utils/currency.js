@@ -4,7 +4,7 @@ export default function inr(usd) {
   return formatINR(inrPrice);
 }
 
-function formatINR(price) {
+export function formatINR(price) {
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: "INR",

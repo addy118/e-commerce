@@ -65,3 +65,7 @@ button:focus-visible {
 li {
   cursor: pointer;
 }
+
+#root {
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import inr from "../utils/usd2inr";
+import inr from "../utils/currency";
 import useProduct from "../utils/useProduct";
 import QtySelector from "./QtySelector";
 
@@ -34,7 +34,7 @@ export default function Product({ url, prodId }) {
 
       <h2 className="font-extrabold">{inr(products[prodId].price)}</h2>
 
-      <QtySelector />
+      <QtySelector initialQty={0} />
 
       <button className="w-full">Add to Cart</button>
     </div>

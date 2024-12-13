@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function QtySelector() {
+export default function QtySelector({ initialQty }) {
   const buttonStyles =
     "bg-[#555555] px-2 py-0 rounded-md border w-1/4 text-center";
 
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(initialQty);
 
   return (
     <div className="my-2 flex">
