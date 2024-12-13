@@ -1,8 +1,10 @@
-baseUrl = "https://fakestoreapi.in/api/products";
+const baseUrl = "https://fakestoreapi.in/api/products";
 
-CATEGORY = ["tv", "audio", "laptop", "mobiile", "gaming", "appliances"];
-PAGE = [1, 2, 3];
+const CATEGORY = ["tv", "audio", "laptop", "mobiile", "gaming", "appliances"];
+const PAGE = [1, 2, 3];
 
-allProducts = `baseUrl?limit=150`;
-categoryWise = `baseUrl/category?type={CATEGORY}`;
-pageWise = `baseUrl?page={PAGE}`;
+const allProducts = `${baseUrl}?limit=150`;
+const categoryWise = `${baseUrl}/category?type=${CATEGORY}`;
+const pageWise = `${baseUrl}?page=${PAGE}`;
+
+export { baseUrl, allProducts, categoryWise, pageWise };
