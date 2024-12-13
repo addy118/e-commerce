@@ -1,9 +1,7 @@
-import { Button } from "@mui/material";
 import "./App.css";
-import { Globe } from "lucide-react";
 
 function App() {
-  return 
+  return <h1>App</h1>
 }
 
 export default App;
