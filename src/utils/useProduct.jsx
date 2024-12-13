@@ -17,8 +17,22 @@ const useProduct = (url) => {
         return response.json();
       })
       .then((data) => {
-        setProductData(data);
-        // console.log(data.products);
+        const { products } = data;
+        const cleanProducts = products.map((product) => {
+          return {
+            // id, title, image, price, description, category, discount
+            id: product.id,
+            image: product.image,
+            title: product.title,
+            desc: product.description,
+            price: product.price,
+            category: product.category,
+            discount: product.discount,
+          };
+        });
+
+        setProductData(cleanProducts);
+        // console.log(cleanProducts);
       })
       .catch((err) => {
         if (err.name === "AbortError") {

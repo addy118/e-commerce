@@ -73,3 +73,8 @@ li {
 #root {
   width: 100%;
 }
+
+.active {
+  font-weight: 700;
+  color: #646cff;
+}

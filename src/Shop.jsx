@@ -10,7 +10,6 @@ export default function Shop() {
       <Navbar />
       <div className="flex gap-4">
         <Sidebar />
-        <div class="h-100% my-4 border-l border-gray-500"></div>
         <Outlet />
       </div>
     </>

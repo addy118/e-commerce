@@ -4,6 +4,7 @@ import Cart from "./Cart";
 import ErrorPage from "./components/ErrorElement";
 import Shop from "./Shop";
 import DisplayProducts from "./components/DisplayProducts";
+import ProductsError from "./components/ProductsError";
 
 const baseUrl = "https://fakestoreapi.in/api/products";
 const allProducts = `${baseUrl}?limit=150`;
@@ -22,6 +23,10 @@ const routes = [
     children: [
       {
         index: true,
+        element: <ProductsError />,
+      },
+      {
+        path: "all",
         element: <DisplayProducts url={allProducts} />,
       },
       {

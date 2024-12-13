@@ -20,9 +20,11 @@ function App() {
         <div className="my-8 flex items-center justify-center gap-3">
           <h3>Don't know where to start?</h3>
 
-          <button className="cursor-pointer rounded-md border p-2">
-            <Link to="/products">Browse all our products</Link>
-          </button>
+          <Link to="/products/all">
+            <button className="cursor-pointer rounded-md border p-2">
+              Browse all our products
+            </button>
+          </Link>
         </div>
       </div>
     </>
