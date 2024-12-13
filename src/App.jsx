@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./App.css";
 import Categories from "./components/Categories";
 import Navbar from "./components/Navbar";
@@ -19,8 +20,8 @@ function App() {
         <div className="my-8 flex items-center justify-center gap-3">
           <h3>Don't know where to start?</h3>
 
-          <button className="cursor-pointer rounded-md border border-black bg-black p-2 text-white">
-            Browse all our products
+          <button className="cursor-pointer rounded-md border p-2">
+            <Link to="/products">Browse all our products</Link>
           </button>
         </div>
       </div>

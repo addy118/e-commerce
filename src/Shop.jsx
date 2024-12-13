@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import DisplayProducts from "./components/DisplayProducts";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
@@ -9,7 +10,8 @@ export default function Shop() {
       <Navbar />
       <div className="flex gap-4">
         <Sidebar />
-        <DisplayProducts url={allProducts} prods={12} />
+        <div class="h-100% my-4 border-l border-gray-500"></div>
+        <Outlet />
       </div>
     </>
   );

@@ -7,6 +7,8 @@ const useProduct = (url) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     fetch(url, { mode: "cors" })
       .then((response) => {
         if (!response.ok) {
@@ -17,17 +19,23 @@ const useProduct = (url) => {
       .then((data) => {
         setProductData(data);
         // console.log(data.products);
-        return data;
       })
       .catch((err) => {
-        setError(err.message);
-        // console.log(err.message);
-        return err.message;
+        if (err.name === "AbortError") {
+          console.log("Fetch request was canceled");
+        } else {
+          setError(err.message);
+        }
       })
       .finally(() => {
         setLoading(false);
       });
-  });
+
+    // clean-up function
+    return () => {
+      controller.abort();
+    };
+  }, [url]);
 
   return { productData, error, loading };
 };
