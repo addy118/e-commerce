@@ -20,7 +20,7 @@ export default function CartUpdater({ prodId, setCart, cart }) {
   const handleDecreaseCart = (id) => {
     const existingProduct = cart.find((cartProd) => cartProd.id === id);
     // if you delete on qty 1 it's gonna be 0
-    if (existingProduct.quantity === 1) {
+    if (!existingProduct || existingProduct.quantity <= 1) {
       handleDelete(id);
       return;
     }
@@ -64,6 +64,10 @@ export default function CartUpdater({ prodId, setCart, cart }) {
     const product = cart.find((cartProd) => cartProd.id === id);
 
     if (product && product.quantity === "") {
+      handleDelete(id);
+    }
+
+    if (product && product.quantity === 0) {
       handleDelete(id);
     }
 
