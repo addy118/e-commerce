@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { onlyInr } from "../utils/currency";
 import Amount from "./Amount";
 import { CartContext } from "../App";
@@ -6,10 +6,12 @@ import { CartContext } from "../App";
 export default function OrderSummary() {
   const { cart } = useContext(CartContext);
 
-  const subTotalPrice = cart.reduce(
-    (total, currProd) => total + currProd.quantity * onlyInr(currProd.price),
-    0
-  );
+  const subTotalPrice = useMemo(() => {
+    return cart.reduce(
+      (total, currProd) => total + currProd.quantity * onlyInr(currProd.price),
+      0
+    );
+  }, [cart]);
   const totalQty = cart.length;
   const shippingFee = cart.length !== 0 ? 40 : 0;
   const tax = cart.length !== 0 ? 2 : 0;

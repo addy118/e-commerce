@@ -9,7 +9,7 @@ export const CartContext = createContext({
 });
 
 export default function App() {
-  const [cart, setCart] = useState(initialCart);
+  const [cart, setCart] = useState([]);
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>
