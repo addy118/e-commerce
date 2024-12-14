@@ -1,14 +1,12 @@
-import { Outlet } from "react-router-dom";
-import DisplayProducts from "./components/DisplayProducts";
-import Navbar from "./components/Navbar";
+import { Outlet, useOutletContext } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import { allProducts } from "./urls";
 
 export default function Shop() {
+  const { cart, setCart } = useOutletContext();
   return (
     <div className="flex gap-4">
       <Sidebar />
-      <Outlet />
+      <Outlet context={{ cart, setCart }} />
     </div>
   );
 }
