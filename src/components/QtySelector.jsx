@@ -1,13 +1,21 @@
+import { CloudLightning } from "lucide-react";
 import { useState } from "react";
 
-export default function QtySelector({ initialQty }) {
+export default function QtySelector({ products = [], id = 0, initialQty }) {
   const buttonStyles =
     "bg-[#555555] px-2 py-0 rounded-md border w-1/4 text-center";
 
   const [qty, setQty] = useState(initialQty);
 
+  const handleAddToCart = (id) => {
+    // get the selected product as object
+    // by default filter() returns an array, so [0] in the end
+    const product = products.filter((product) => id === product.id)[0];
+    console.log(product.title);
+  };
+
   return (
-    <div className="my-2 flex">
+    <div className="my-2 flex flex-col gap-3">
       <div>
         <button
           className={buttonStyles}
@@ -38,6 +46,9 @@ export default function QtySelector({ initialQty }) {
           +
         </button>
       </div>
+      <button className="w-full" onClick={() => handleAddToCart(id)}>
+        Add to Cart
+      </button>
     </div>
   );
 }

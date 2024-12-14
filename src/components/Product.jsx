@@ -4,7 +4,6 @@ import QtySelector from "./QtySelector";
 
 export default function Product({ url, prodId }) {
   const { productData, error, loading } = useProduct(url);
-  // const { products } = productData;
 
   if (loading)
     return (
@@ -34,9 +33,11 @@ export default function Product({ url, prodId }) {
 
       <h2 className="font-extrabold">{inr(productData[prodId].price)}</h2>
 
-      <QtySelector initialQty={0} />
-
-      <button className="w-full">Add to Cart</button>
+      <QtySelector
+        products={productData}
+        id={productData[prodId].id}
+        initialQty={0}
+      />
     </div>
   );
 }
