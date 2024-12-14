@@ -1,4 +1,4 @@
-import { formatINR } from "../utils/currency";
+import inr, { formatINR } from "../utils/currency";
 import CartUpdater from "./CartUpdater";
 
 export default function CartProduct({ cart, setCart, prodId }) {
@@ -12,13 +12,12 @@ export default function CartProduct({ cart, setCart, prodId }) {
       <div className="flex h-full w-4/6 flex-col justify-between px-4">
         <h3 className="line-clamp-3 py-1">{product.title}</h3>
 
-        <h3 className="">{formatINR(product.price)}</h3>
+        <h3 className="">{inr(product.price)}</h3>
 
         <CartUpdater cart={cart} setCart={setCart} prodId={product.id} />
       </div>
 
-      <h2 className="w-1/6 px-2 text-center font-bold">{formatINR(total)}</h2>
+      <h2 className="w-1/6 px-2 text-center font-bold">{inr(total)}</h2>
     </div>
   );
 }
-

@@ -1,21 +1,20 @@
+import { onlyInr } from "../utils/currency";
 import Amount from "./Amount";
 
 export default function OrderSummary({ cart }) {
   const subTotalPrice = cart.reduce(
-    (total, currProd) => total + currProd.quantity * currProd.price,
+    (total, currProd) => total + currProd.quantity * onlyInr(currProd.price),
     0
   );
   const totalQty = cart.length;
-  const shippingFee = 40;
-  const tax = 2;
+  const shippingFee = cart.length !== 0 ? 40 : 0;
+  const tax = cart.length !== 0 ? 2 : 0;
 
   const totalPrice = (
     subTotalPrice +
     shippingFee +
     (subTotalPrice + shippingFee) * (tax / 100)
   ).toFixed(2);
-
-  // console.log(subTotalPrice);
 
   return (
     <div className="w-1/3 border border-gray-500 p-4 shadow-md">
@@ -24,7 +23,7 @@ export default function OrderSummary({ cart }) {
       <Amount label="Shipping Fee" amt={shippingFee} />
       <div className="my-2 flex justify-between">
         <div className="font-bold">Tax:</div>
-        <div>2%</div>
+        <div>{tax}%</div>
       </div>
       <hr className="my-2 border-gray-500" />
       <Amount label="Total" amt={totalPrice} total={true} />

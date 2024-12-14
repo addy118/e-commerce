@@ -4,9 +4,9 @@ import Categories from "./components/Categories";
 function Home() {
   return (
     <div className="m-10 my-8">
-      <h1 className="text-8xl">Welcome to our shop</h1>
+      <h1 className="text-8xl">Welcome to our shop!</h1>
 
-      <h2 className="my-8 text-4xl">Shop from our varied range of products!</h2>
+      <h2 className="my-8 text-4xl">Shop from our varied range of products</h2>
 
       <Categories />
 
