@@ -1,4 +1,3 @@
-import { CloudLightning } from "lucide-react";
 import { useState } from "react";
 
 export default function QtySelector({

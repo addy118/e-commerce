@@ -1,4 +1,3 @@
-import { Children } from "react";
 import Home from "./Home";
 import Cart from "./Cart";
 import ErrorPage from "./components/ErrorElement";

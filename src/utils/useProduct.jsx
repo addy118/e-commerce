@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { baseUrl, allProducts, categoryWise, pageWise } from "../urls";
 
 const useProduct = (url) => {
   const [productData, setProductData] = useState("");

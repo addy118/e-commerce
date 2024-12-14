@@ -1,8 +1,7 @@
-import { Link, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Categories from "./components/Categories";
 
 function Home() {
-  const { cart, setCart } = useOutletContext();
   return (
     <div className="m-10 my-8">
       <h1 className="text-8xl">Welcome to our shop</h1>

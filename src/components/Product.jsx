@@ -2,7 +2,7 @@ import inr from "../utils/currency";
 import useProduct from "../utils/useProduct";
 import QtySelector from "./QtySelector";
 
-export default function Product({ url, prodId, cart, setCart }) {
+export default function Product({ url, prodId, setCart }) {
   const { productData, error, loading } = useProduct(url);
 
   if (loading)
