@@ -6,12 +6,9 @@ import { allProducts } from "./urls";
 
 export default function Shop() {
   return (
-    <>
-      <Navbar />
-      <div className="flex gap-4">
-        <Sidebar />
-        <Outlet />
-      </div>
-    </>
+    <div className="flex gap-4">
+      <Sidebar />
+      <Outlet />
+    </div>
   );
 }
