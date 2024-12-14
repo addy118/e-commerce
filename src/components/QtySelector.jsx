@@ -1,14 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../App";
 
-export default function QtySelector({
-  products = [],
-  id = 0,
-  setCart,
-  initialQty,
-}) {
+export default function QtySelector({ products, id, initialQty }) {
   const buttonStyles =
     "bg-[#555555] px-2 py-0 rounded-md border w-1/4 text-center";
 
+  const { setCart } = useContext(CartContext);
   const [qty, setQty] = useState(initialQty);
 
   const handleAddToCart = (id) => {

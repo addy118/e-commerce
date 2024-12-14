@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import inr, { formatINR } from "../utils/currency";
 import CartUpdater from "./CartUpdater";
+import { CartContext } from "../App";
 
-export default function CartProduct({ cart, setCart, prodId }) {
+export default function CartProduct({ prodId }) {
+  const { cart, setCart } = useContext(CartContext);
   const product = cart.find((item) => item.id === prodId);
   const total = product.price * product.quantity;
 
@@ -14,7 +17,7 @@ export default function CartProduct({ cart, setCart, prodId }) {
 
         <h3 className="">{inr(product.price)}</h3>
 
-        <CartUpdater cart={cart} setCart={setCart} prodId={product.id} />
+        <CartUpdater prodId={product.id} />
       </div>
 
       <h2 className="w-1/6 px-2 text-center font-bold">{inr(total)}</h2>

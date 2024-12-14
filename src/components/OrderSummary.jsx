@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { onlyInr } from "../utils/currency";
 import Amount from "./Amount";
+import { CartContext } from "../App";
 
-export default function OrderSummary({ cart }) {
+export default function OrderSummary() {
+  const { cart } = useContext(CartContext);
+
   const subTotalPrice = cart.reduce(
     (total, currProd) => total + currProd.quantity * onlyInr(currProd.price),
     0

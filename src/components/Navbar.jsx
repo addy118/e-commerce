@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import cartIcon from "../assets/cart.svg";
+import { useContext } from "react";
+import { CartContext } from "../App";
 
-export default function Navbar({ cart }) {
+export default function Navbar() {
+  const { cart } = useContext(CartContext);
   return (
     <>
       <div className="flex items-center justify-between gap-4 p-4 px-10">

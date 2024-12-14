@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import deleteIcon from "../assets/delete.svg";
+import { CartContext } from "../App";
 
-export default function CartUpdater({ prodId, setCart, cart }) {
+export default function CartUpdater({ prodId }) {
   const buttonStyles =
     "bg-[#555555] px-2 py-0 rounded-md border w-1/4 text-center";
 
+  const { cart, setCart } = useContext(CartContext);
   const product = cart.find((item) => item.id === prodId);
 
   const handleIncreaseCart = (id) => {

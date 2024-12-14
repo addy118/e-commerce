@@ -2,7 +2,7 @@ import inr from "../utils/currency";
 import useProduct from "../utils/useProduct";
 import QtySelector from "./QtySelector";
 
-export default function Product({ url, prodId, setCart }) {
+export default function Product({ url, prodId }) {
   const { productData, error, loading } = useProduct(url);
 
   if (loading)
@@ -36,7 +36,6 @@ export default function Product({ url, prodId, setCart }) {
       <QtySelector
         products={productData}
         id={productData[prodId].id}
-        setCart={setCart}
         initialQty={0}
       />
     </div>
