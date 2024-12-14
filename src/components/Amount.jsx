@@ -5,7 +5,7 @@ export default function Amount({ qty = false, label, amt, total = false }) {
     <div className={`my-2 flex justify-between ${total ? "text-xl" : ""}`}>
       <div className="font-bold">
         {label}
-        {qty ? ` (${qty})` : qty}
+        {qty ? ` (${qty})` : ""}
       </div>
       <div className={`${total ? "font-bold text-green-500" : ""}`}>
         {formatINR(amt)}

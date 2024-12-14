@@ -4,7 +4,7 @@ import CartUpdater from "./CartUpdater";
 import { CartContext } from "../App";
 
 export default function CartProduct({ prodId }) {
-  const { cart, setCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   const product = cart.find((item) => item.id === prodId);
   const total = product.price * product.quantity;
 
