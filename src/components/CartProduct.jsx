@@ -21,3 +21,4 @@ export default function CartProduct({ cart, setCart, prodId }) {
     </div>
   );
 }
+

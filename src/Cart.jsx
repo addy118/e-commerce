@@ -11,7 +11,7 @@ export default function Cart() {
         <h2 className="pb-4 text-2xl font-bold">Your Shopping Cart</h2>
         <DisplayCartProducts cart={cart} setCart={setCart} />
       </div>
-      <OrderSummary />
+      <OrderSummary cart={cart} />
     </div>
   );
 }
